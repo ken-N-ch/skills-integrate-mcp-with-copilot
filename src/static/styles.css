@@ -33,11 +33,13 @@ main {
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+  align-items: flex-start;
 }
 
 @media (min-width: 768px) {
   main {
-    grid-template-columns: 2fr 1fr;
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr);
   }
 }
 
@@ -57,6 +59,33 @@ section h3 {
   color: #1a237e;
 }
 
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  flex: 1 1 180px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #1a237e;
+}
+
+.filter-group input,
+.filter-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
 .activity-card {
   margin-bottom: 15px;
   padding: 15px;
@@ -65,13 +94,48 @@ section h3 {
   background-color: #f9f9f9;
 }
 
-.activity-card h4 {
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
   margin-bottom: 10px;
+}
+
+.activity-card h4 {
+  margin: 0;
   color: #0066cc;
+}
+
+.category-pill {
+  display: inline-block;
+  background: #e8f0fe;
+  color: #1a237e;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .activity-card p {
   margin-bottom: 8px;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 12px;
+}
+
+.tag {
+  display: inline-block;
+  background: #eef5ed;
+  color: #2e7d32;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 /* New styles for participants section */
